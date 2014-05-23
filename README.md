@@ -79,6 +79,40 @@ define("appkit/controllers/posts/index",
 
 ---------------------------------------
 
+###代理/数据模拟
+Ember Appkit 允许使用数据Mock或Proxy的方式进行数据测试
+
+#####数据模拟
+如果希望使用该功能，可以在 api-stub/router.js文件下添加数据模拟,并在项目的package.js文件中制定APIMEthod属性为 "stub"
+在下一次grunt server 中Ember Appkit 将开启一个express服务器进行数据模拟工作
+
+```javascript
+module.exports = function(server) {
+  
+  /**
+  *如果浏览器发起一个目的地为api/posts的get请求，服务端将返回 hello mocking world.
+  */
+  server.namespace("/api", function() {
+    server.get('/posts', function(req, res) {
+      res.send({ post: { body: "hello mocking world" } });
+    });
+  });
+};
+
+```
+
+#####代理
+Ember appkit同样允许使用代理模式进行数据代理，如果需要使用代理模式，请在package.js文件中添加如下属性
+```javascript
+  APIMethod: "proxy",
+  proxyURL: "http://apiserver.dev:3000",
+  proxyPath: "/api"
+```
+对于浏览器一个 api/posts的请求，Ember app kit 将会把请求转发至http://apiserver.dev:3000/api/posts
+
+---------------------------------------
+
+
 ###项目结构说明
 
 <table>
@@ -177,7 +211,21 @@ define("appkit/controllers/posts/index",
 </tr>
 </tbody></table>
 
+---------------------------------------
 
+###Grunt文件说明
+
+Ember Appkit基于[Grunt](http://gruntjs.com/)构建，如果需要了解Grunt的每个任务，可以查看Grunt.js文件，如果需要添加自定义任务，可以将自定义任务放置在tasks/options目录下
+####Grunt命令说明
++ grunt 运行grunt default任务
++ grunt server编译源原件，并启动一个Http服务,同时监听文件的变化，做到浏览器热刷新。用于开发环境。
++ grunt test:server与grunt server一致，不过在进入应用后会同时执行测试文件
++ grunt dist 构建可发布版本，项目打包至/dist目录
++ grunt server:dist与grunt dist一致，不过在构建前执行server任务
+
+
+-----------------------------------------------
+更多详情可查看[Ember App Kit Getting Start](http://iamstef.net/ember-app-kit/)
 
 
 
