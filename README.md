@@ -77,6 +77,10 @@ define("appkit/controllers/posts/index",
   
 ```
 
+---------------------------------------
+
+###项目结构说明
+
 <table>
 <thead>
 <tr>
@@ -138,7 +142,40 @@ define("appkit/controllers/posts/index",
 </tr>
 </tbody></table>
 
+###app结构说明
 
+<table>
+<thead>
+<tr>
+  <th>文件/文件夹</th>
+  <th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>app/app.js</td>
+  <td>应用入口，该文件是最先执行的模块</td>
+</tr>
+<tr>
+  <td>app/index.html</td>
+  <td>应用界面，其中包含js,css依赖</td>
+</tr>
+<tr>
+  <td>app/router.js</td>
+  <td>Ember Router配置文件</td>
+</tr>
+<tr>
+  <td>app/styles/</td>
+  <td>项目样式文件</td>
+</tr>
+<tr>
+  <td>app/templates/</td>
+  <td>应用模板文件</td>
+</tr>
+<tr>
+  <td>app/controllers/, app/models/, …</td>
+  <td>应用相关的Controller,Model…</td>
+</tr>
+</tbody></table>
 
 
 
