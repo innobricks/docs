@@ -77,23 +77,66 @@ define("appkit/controllers/posts/index",
   
 ```
 
-| 文件/文件夹 | 作用 |
-|----------|
-|app/|项目主目录，包含样式文件,模板文件,EmberJs文件，在开发过程中/构建后，项目JS文件将被合并至app.js文件|
-|dist/|发布版本目录，根据Ember Appkit的设置，JS文件与css文件将被合并，压缩，打包至dist目录
-|public/|在开发过程/构建后，该文件将被合并到项目根目录下,建议将图片放置在public/images目录下
-|task/|本目录包含构建脚本文件
-|tasks/options/|用来放置用户自定义的构建脚本
-|tests/|放置Ember项目的测试文件
-|tmp/|编译过程使用到的临时目录（可以无视它）
-|vendor/|项目依赖的文件，包括Ember依赖的JS文件，和通过Bower下载的项目依赖
-|.jshintrc|语法检查配置文件
-|.travis.yml|github构建集成文件
-|Gruntfile.js|构建脚本配置|
-|bower.json| bower依赖配置文件|
-|package.json| nodejs配置文件|
-
-
+<table>
+<thead>
+<tr>
+  <th>文件/文件夹</th>
+  <th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+  <td>app/</td>
+  <td>项目主目录，包含样式文件,模板文件,EmberJs文件，在开发过程中/构建后，项目JS文件将被合并至app.js文件</td>
+</tr>
+<tr>
+  <td>dist/</td>
+  <td>发布版本目录，根据Ember Appkit的设置，JS文件与css文件将被合并，压缩，打包至dist目录</td>
+</tr>
+<tr>
+  <td>public/</td>
+  <td>在开发过程/构建后，该文件将被合并到项目根目录下,建议将图片放置在public/images目录下</td>
+</tr>
+<tr>
+  <td>task/</td>
+  <td>本目录包含构建脚本文件</td>
+</tr>
+<tr>
+  <td>tasks/options/</td>
+  <td>用来放置用户自定义的构建脚本</td>
+</tr>
+<tr>
+  <td>tests/</td>
+  <td>放置Ember项目的测试文件</td>
+</tr>
+<tr>
+  <td>tmp/</td>
+  <td>编译过程使用到的临时目录（可以无视它）</td>
+</tr>
+<tr>
+  <td>vendor/</td>
+  <td>项目依赖的文件，包括Ember依赖的JS文件，和通过Bower下载的项目依赖</td>
+</tr>
+<tr>
+  <td>.jshintrc</td>
+  <td>语法检查配置文件</td>
+</tr>
+<tr>
+  <td>.travis.yml</td>
+  <td>github构建集成文件</td>
+</tr>
+<tr>
+  <td>Gruntfile.js</td>
+  <td>构建脚本配置</td>
+</tr>
+<tr>
+  <td>bower.json</td>
+  <td>bower依赖配置文件</td>
+</tr>
+<tr>
+  <td>package.json</td>
+  <td>nodejs配置文件</td>
+</tr>
+</tbody></table>
 
 
 
