@@ -2,7 +2,7 @@
 继承自[Adapter](https://github.com/innobricks/docs/tree/master/ember_data/Adapter.md)
 * 实现了`Adapter`的所有抽象方法
 * 用于处理`REST`方式的数据请求
-* 默认的序列化器为`RESTSerializer`
+* 与`RESTSerializer`配套使用
 
 ### url拼接规则
 * host
