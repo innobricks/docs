@@ -208,24 +208,24 @@ App.Student = DS.Model.extend({
 
 服务端返回的数据应该形如:
 ```javascript
-//GET /authors
+//GET /teachers
 {
-  "authors": [
+  "teachers": [
     {
       "id":    "1",
       "name":  "",
-      "posts": ["12"]     /* IDs of posts associated with this author */
+      "students": ["12"]     /* IDs of students associated with this author */
     }
   ]
 }
 
-//GET /posts
+//GET /students
 {
-  "posts": [
+  "students": [
     {
       "id":      "12",
       "content": "",
-      "authors": ["1"]    /* IDs of authors associated with this post */
+      "teachers": ["1"]    /* IDs of teachers associated with this post */
     }
   ]
 }
