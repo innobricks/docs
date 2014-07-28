@@ -7,7 +7,7 @@
 
 ### Store内部要点
 #### typeMaps
-该属性为`Store`内部的类型映射,一个同一片`type`对应一个`typeMap`,格式如下
+该属性为`Store`内部的类型映射,一个`type`对应一个`typeMap`,格式如下
 ```javascript
 var guid = guidFor[type]
 typeMaps:{
