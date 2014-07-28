@@ -30,7 +30,29 @@ DS.Model#save--->extractSave:extractSingle
 ```
 
 ####数据格式
-在返回的数据中都可以添加一个`links`字段,用于动态指定属性的资源路径
+在返回的数据中都可以添加一个`links`字段,用于动态指定属性的资源路径,
+Ember Data支持使用使用links参数代替相关联模型的ids，links的value值为对应关联类型的GET 请求路径
+
+
+```js
+{
+    id: 1,
+    firstName: "Tom",
+    lastName: "Dale",
+    links: {
+        children: "/people/1/children"
+    }
+}
+//对于这样的一个模型，在获取模型的children属性时，如果children不存在，则会发情请求
+GET /shops/14/groceries
+{
+  "groceries": [
+    { "id": "98",  "provider": "14", "type": "shop" },
+    { "id": "99",  "provider": "14", "type": "shop" },
+    { "id": "112", "provider": "14", "type": "shop" }
+  ]
+}
+```
 
 #####Model
 ```javascript
