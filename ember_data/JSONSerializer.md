@@ -6,13 +6,14 @@
 * 序列化模型关系
 取到数据后:extract+normalize
 有数据更新需要保存:serialize
+
 ####为了获得最大性能,Ember-Data建议使用`RESTSerializer`
+
 当数据从后端返回时,这是的动作叫`extract`,根据不同的情况会有如下的不同数据解析
 * `extractFindAll`
 * `extractFindQuery`
 * `extractFindMany`
 * `extractFindHasMany`
-* 
 
 ####alias
 ```javascript
@@ -59,7 +60,7 @@ App.Profile=DS.Model.extend({
     "license": "copy@emberjs.com",
     "person": 1
 }
-//当在`person`模型中使用`profile` 属性时,在一堆一关系下,Ember-Data会自动向后台请求profile的数据
+//当在`person`模型中使用`profile` 属性时,在一对一关系下,Ember-Data会自动向后台请求profile的数据
 //请求之前,本地是没有`profile`数据的
 ```
 belongsTo async:true
@@ -102,9 +103,9 @@ App.Profile=DS.Model.extend({
     "person": 1
 }
 ```
-当在`person`模型中使用`profile` 属性时,在一堆多关系下,Ember-Data不会自动向后台请求`profile`的数据
+当在`person`模型中使用`profile` 属性时,在一对多关系下,Ember-Data不会自动向后台请求`profile`的数据
 会默认认为本地已有`profile`的数据
-如果要在一堆多关系下,`profile`在需要时获取,需要设置为异步,如下:
+如果要在一对多关系下,`profile`在需要时获取,需要设置为异步,如下:
 ```javascript
 profile:DS.hasMany("profile",{async:true})
 ```
@@ -256,19 +257,19 @@ JSONSerializer.extend({
     + serialize钩子，当需要将前端的数据提交到后端时，通过该钩子将record序列化为json数据，默认情况下形如
         
         ```javascript
-            App.Comment = DS.Model.extend({
-              title: DS.attr(),
-              body: DS.attr(),
-            
-              author: DS.belongsTo('user')
-            });
-            
-            //将会被序列化为下列格式
-            {
-              "title": "Rails is unagi",
-              "body": "Rails? Omakase? O_O",
-              "author": 12
-            }
+        App.Comment = DS.Model.extend({
+          title: DS.attr(),
+          body: DS.attr(),
+        
+          author: DS.belongsTo('user')
+        });
+        
+        //将会被序列化为下列格式
+        {
+          "title": "Rails is unagi",
+          "body": "Rails? Omakase? O_O",
+          "author": 12
+        }
         ```
         
 + serializeAttribute(record, json, key, attribute)
@@ -286,32 +287,32 @@ JSONSerializer.extend({
     + serializeBelongsTo用来序列化使用DS.belongsTo方法定义出来的属性
         
         ```javascript
-            App.PostSerializer = DS.JSONSerializer.extend({
-              serializeBelongsTo: function(record, json, relationship) {
-                var key = relationship.key;
-            
-                var belongsTo = get(record, key);
-            
-                key = this.keyForRelationship ? this.keyForRelationship(key, "belongsTo") : key;
-            
-                json[key] = Ember.isNone(belongsTo) ? belongsTo : belongsTo.toJSON();
-              }
-            });
+        App.PostSerializer = DS.JSONSerializer.extend({
+          serializeBelongsTo: function(record, json, relationship) {
+            var key = relationship.key;
+        
+            var belongsTo = get(record, key);
+        
+            key = this.keyForRelationship ? this.keyForRelationship(key, "belongsTo") : key;
+        
+            json[key] = Ember.isNone(belongsTo) ? belongsTo : belongsTo.toJSON();
+          }
+        });
         ```
 + serializeHasMany (record, json, relationship)
     + serializeHasMany用来序列化使用DS.hasMany方法定义出来的属性
         
         ```javascript
-            App.PostSerializer = DS.JSONSerializer.extend({
-              serializeHasMany: function(record, json, relationship) {
-                var key = relationship.key;
-                if (key === 'comments') {
-                  return;
-                } else {
-                  this._super.apply(this, arguments);
-                }
-              }
-            });
+        App.PostSerializer = DS.JSONSerializer.extend({
+          serializeHasMany: function(record, json, relationship) {
+            var key = relationship.key;
+            if (key === 'comments') {
+              return;
+            } else {
+              this._super.apply(this, arguments);
+            }
+          }
+        });
         ```
 + serializePolymorphicType (record, json, relationship)
     + serializePolymorphicType用来序列化‘多态’属性，当使用DS.belongsTo方法定义，并将{polymorphic: true}作为方法的第二个参数，则该属性为多态属性。该属性序列化时将调用serializePolymorphicType方法进行序列化
