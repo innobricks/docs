@@ -169,12 +169,16 @@ JSONSerializer.extend({
         ```
 + extractCreateRecord(store, type, payload)
     + extractCreateRecord，在调用Store.createRecord时会触发该钩子方法，默认情况下，该钩子会调用extractSave钩子
+    
 + extractDeleteRecord(store, type, payload)
     + extractDeleteRecord，在调用Store.deleteRecord时会触发该钩子方法，默认情况下，该钩子会调用extractSave钩子
+    
 + extractFind(store, type, payload)
     + extractFind，在调用Store.find时会触发该钩子方法，默认情况下，该钩子会调用extractSingle钩子
+    
 + extractFindAll(store, type, payload)
-    + extractFindAll，在调用Store.findAll时会触发该钩子方法，默认情况下，该钩子会调用extractArray钩子
+    + extractFindAll，在调用Store.findAll时会触发该钩子方法，默认情况下，该钩子会调用extractArray钩
+    
 + extractFindBelongsTo(store, type, payload)
     + extractFindBelongsTo，在调用Store.findBelongsTo时会触发该钩子方法，默认情况下，该钩子会调用extractSingle钩子
 
@@ -186,6 +190,7 @@ JSONSerializer.extend({
 
 + extractFindQuery(store, type, payload)
     + extractFindQuery，在调用Store.findQuery时会触发该钩子方法，默认情况下，该钩子会调用extractSingle钩子
+    
 + extractMeta(store, type, payload)
     + extractMeta，用来反序列化payload中的元数据信息，默认情况下，元数据信息存储于payload中的meta属性
         
@@ -254,6 +259,21 @@ JSONSerializer.extend({
           }
         });
         ```
+
++ normalizePayload(payload)
+    + normalizePayload，将在normalize方法调用之前得到调用，可以在该钩子内进行payload的调整，如
+    
+    ```js
+    App.ApplicationSerializer = DS.JSONSerializer.extend({
+      normalizePayload: function(payload) {
+        delete payload.version;
+        delete payload.status;
+        return payload;
+      }
+    });
+    ```
+
+
 
 + 定制化
     + 有些时候，服务端所需要的数据格式与内建序列化器产生的格式不同，这时候则可以进行数据的定制化
