@@ -56,13 +56,13 @@ post: {
 }
 ```
 
-```
-默认会发出如下请求
+```javascript
+//默认会发出如下请求
 GET /comments/1
 GET /comments/2
 ```
-```
-设为true后
+```javascript
+//设为true后
 GET /comments?ids[]=1&ids[]=2
 ```
         
