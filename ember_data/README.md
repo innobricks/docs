@@ -1,4 +1,10 @@
 # Ember-Data使用指南
+
+### 更多教程
++ [Ember Data: A Comprehensive Tutorial for the ember-data Library](http://www.toptal.com/emberjs/a-thorough-guide-to-ember-data)
++ [EMBER 1.0 – RISE FROM THE ASHES](http://dev.mygrid.org.uk/blog/tag/ember-data/)
+
+
 ### 要素
 * Store
 * Adapter
