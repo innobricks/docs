@@ -384,7 +384,8 @@ record.save().then(null, function() {
 * save
 * serialize
 * toJSON
-typeForRelationship 
+* typeForRelationship 
+
 ### 事件钩子
 * becameError
 * becameInvalid
@@ -392,4 +393,3 @@ typeForRelationship
 * didDelete
 * didLoad
 * didUpdate
-

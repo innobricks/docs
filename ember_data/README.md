@@ -1,4 +1,8 @@
 # Ember-Data使用指南
+> 建议先看下面的入门教程,再看下面的详细文档
+
+* [Ember-Data 入门教程](http://www.toptal.com/emberjs/a-thorough-guide-to-ember-data)
+
 ### 要素
 * Store
 * Adapter
