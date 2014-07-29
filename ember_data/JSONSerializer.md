@@ -191,6 +191,7 @@ profile:DS.hasMany("profile",{async:true})
     ```
 + extractSave(store, type, payload) 
 >extractSave在调用Model.save时会触发该钩子方法，默认情况下，该钩子会调用extractSingle钩子
+
 + extractSave(store, type, payload) 
 >extractSingle用来反序列化从adapter返回的单条数据记录
     
@@ -419,7 +420,7 @@ profile:DS.hasMany("profile",{async:true})
 
 ###属性钩子
 #####`primaryKey`
-用户可自定以主键,Ember-Data会统一处理如下:
+用户可自定义主键,Ember-Data会统一处理如下:
 ```javascript
 var primaryKey = get(this, 'primaryKey');
 if (primaryKey === 'id') { return; }

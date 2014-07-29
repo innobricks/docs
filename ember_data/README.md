@@ -1,7 +1,9 @@
 # Ember-Data使用指南
-> 建议先看下面的入门教程,再看下面的详细文档
+### 更多教程
++ [Ember Data: A Comprehensive Tutorial for the ember-data Library](http://www.toptal.com/emberjs/a-thorough-guide-to-ember-data)
++ [EMBER 1.0 – RISE FROM THE ASHES](http://dev.mygrid.org.uk/blog/tag/ember-data/)
 
-* [Ember-Data 入门教程](http://www.toptal.com/emberjs/a-thorough-guide-to-ember-data)
+>>>>>>> e2538df32632b4fa9b8afc2e1ab64453fd25daaf
 
 ### 要素
 * Store
