@@ -3,7 +3,6 @@
 + [Ember Data: A Comprehensive Tutorial for the ember-data Library](http://www.toptal.com/emberjs/a-thorough-guide-to-ember-data)
 + [EMBER 1.0 – RISE FROM THE ASHES](http://dev.mygrid.org.uk/blog/tag/ember-data/)
 
->>>>>>> e2538df32632b4fa9b8afc2e1ab64453fd25daaf
 
 ### 要素
 * Store
