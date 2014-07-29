@@ -22,7 +22,7 @@ App.FamousPerson = DS.Model.extend({
 ```
 
 -----------------------
-对于存在关联关系的模型，如1对多，多对已等，对于给定模型
+对于存在关联关系的模型，如一对多，多对一等，对于给定模型
 
 ```javascript
   App.Person = DS.Model.extend({

@@ -1,8 +1,8 @@
-###概述
+### 概述
 REST Adapter是[JSON Serializer](./JSONSerializer.md)的实现子类
 通常情况下，应用程序将使用RESTSerializer的normalizeHash方法完全数据的序列化.
 
-####方法钩子(重写的部分钩子方法，更多钩子方法见[JSON Serializer](./JSONSerializer.md))
+#### 方法钩子(重写的部分钩子方法，更多钩子方法见[JSON Serializer](./JSONSerializer.md))
 + extractArray (store, primaryType, payload)
 >当服务端返回多条数据时，该钩子方法得到调用，如对于如下数据
 
@@ -114,9 +114,10 @@ REST Adapter是[JSON Serializer](./JSONSerializer.md)的实现子类
     })
     ```
 + pushPayload (store, payload)
+
 > 向Store内加入模型，该方法将在向Store推入模型前，进行数据的normalize
 
-####属性钩子
+#### 属性钩子
 
 + normalizeHash
 >该钩子将在数据进行normalize时，根据所匹配的key进行相应的序列化，如
@@ -150,9 +151,3 @@ REST Adapter是[JSON Serializer](./JSONSerializer.md)的实现子类
       }
     });
     ```
-
-
-
-
-
-
